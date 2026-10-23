@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b3151klmju1o0"]
+
+[ext_resource type="PackedScene" uid="uid://cd1dewl5ly5lq" path="res://Player/player.tscn" id="1_yh5la"]
+[ext_resource type="PackedScene" uid="uid://b8y30jwip7gey" path="res://NPC-2/npc_2.tscn" id="2_2w1kt"]
+
+[node name="Main" type="Node2D" unique_id=401837326]
+
+[node name="Player" parent="." unique_id=435235803 instance=ExtResource("1_yh5la")]
+position = Vector2(502, 330)
+collision_mask = 2
+max_speed = 100
+acceleration = 100
+friction = 8
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1873569735]
+position = Vector2(566, 329)
+
+[node name="NPC2" parent="." unique_id=252581698 instance=ExtResource("2_2w1kt")]
+position = Vector2(942, 275)
+collision_layer = 2
