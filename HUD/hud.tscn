@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://de5he7uc687fq"]
+
+[ext_resource type="Script" uid="uid://itlx3cltkoxi" path="res://HUD/hud.gd" id="1_h61sl"]
+
+[node name="HUD" type="Control" unique_id=1545173530]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h61sl")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=134455246]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 20.0
+offset_right = 185.0
+offset_bottom = 86.0
+alignment = 1
+
+[node name="Petrified" type="Label" parent="HBoxContainer" unique_id=1229248457]
+layout_mode = 2
+text = "Petrified: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Amount" type="Label" parent="HBoxContainer" unique_id=808434125]
+layout_mode = 2
+text = "Amount"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slash" type="Label" parent="HBoxContainer" unique_id=179163503]
+layout_mode = 2
+text = "/"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MaxAmount" type="Label" parent="HBoxContainer" unique_id=1445444905]
+layout_mode = 2
+text = "MaxAmount"
+horizontal_alignment = 1
+vertical_alignment = 1

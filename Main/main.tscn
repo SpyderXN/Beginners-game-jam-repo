@@ -1,20 +1,37 @@
 [gd_scene format=3 uid="uid://b3151klmju1o0"]
 
+[ext_resource type="Script" uid="uid://d0ipnom2xw6s8" path="res://Main/main.gd" id="1_eunhr"]
 [ext_resource type="PackedScene" uid="uid://cd1dewl5ly5lq" path="res://Player/player.tscn" id="1_yh5la"]
 [ext_resource type="PackedScene" uid="uid://b8y30jwip7gey" path="res://NPC-2/npc_2.tscn" id="2_2w1kt"]
+[ext_resource type="Script" uid="uid://s6cj8d0ef2v7" path="res://Main/camera_2d.gd" id="3_k3v36"]
+[ext_resource type="PackedScene" uid="uid://de5he7uc687fq" path="res://HUD/hud.tscn" id="3_qvhan"]
 
 [node name="Main" type="Node2D" unique_id=401837326]
+script = ExtResource("1_eunhr")
+restricted_amount = 3
 
 [node name="Player" parent="." unique_id=435235803 instance=ExtResource("1_yh5la")]
 position = Vector2(502, 330)
-collision_mask = 2
 max_speed = 100
 acceleration = 100
 friction = 8
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1873569735]
-position = Vector2(566, 329)
+position = Vector2(636, 359)
+script = ExtResource("3_k3v36")
 
 [node name="NPC2" parent="." unique_id=252581698 instance=ExtResource("2_2w1kt")]
 position = Vector2(942, 275)
-collision_layer = 2
+
+[node name="NPC3" parent="." unique_id=803515891 instance=ExtResource("2_2w1kt")]
+position = Vector2(759, 163)
+
+[node name="NPC4" parent="." unique_id=1562215382 instance=ExtResource("2_2w1kt")]
+position = Vector2(819, 491)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1426440220]
+
+[node name="HUD" parent="UI" unique_id=1545173530 instance=ExtResource("3_qvhan")]
+
+[connection signal="eyes_closed" from="Player" to="Camera2D" method="_on_player_eyes_closed"]
+[connection signal="eyes_opened" from="Player" to="Camera2D" method="_on_player_eyes_opened"]
