@@ -1,17 +1,16 @@
 [gd_scene format=3 uid="uid://cd1dewl5ly5lq"]
 
 [ext_resource type="Script" uid="uid://bl8wbtelh2qj0" path="res://Player/player.gd" id="1_4ntmi"]
-[ext_resource type="Texture2D" uid="uid://dcwy5pkjvcm8x" path="res://icon.svg" id="1_l8h54"]
+[ext_resource type="Texture2D" uid="uid://bor0ut8jbwgca" path="res://Assets/kenney_rpg-urban-pack/Tiles/tile_0078.png" id="2_gwnis"]
 [ext_resource type="Script" uid="uid://cqe2siv27rdo" path="res://Player/vision_area.gd" id="3_btcbx"]
+[ext_resource type="Texture2D" uid="uid://b5uc2sdnbnv5a" path="res://Assets/VisionCone.png" id="4_gwnis"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yh5la"]
-size = Vector2(120, 112)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i4sqk"]
-size = Vector2(146, 210)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a01pd"]
+radius = 6.0
+height = 16.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ukv2n"]
-size = Vector2(131, 115)
+size = Vector2(12, 15)
 
 [node name="Player" type="CharacterBody2D" unique_id=435235803]
 scale = Vector2(0.5, 0.5)
@@ -19,10 +18,11 @@ collision_mask = 2
 script = ExtResource("1_4ntmi")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2104377773]
-texture = ExtResource("1_l8h54")
+texture_filter = 1
+texture = ExtResource("2_gwnis")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1081938329]
-shape = SubResource("RectangleShape2D_yh5la")
+shape = SubResource("CapsuleShape2D_a01pd")
 
 [node name="Vision Area" type="Area2D" parent="." unique_id=1289046627]
 collision_mask = 2
@@ -30,21 +30,18 @@ script = ExtResource("3_btcbx")
 
 [node name="Sprite2D" type="Sprite2D" parent="Vision Area" unique_id=300540274]
 modulate = Color(1, 1, 1, 0.5254902)
-position = Vector2(168, 0)
-rotation = 1.5707964
-scale = Vector2(1, 1.53125)
-texture = ExtResource("1_l8h54")
+texture_filter = 1
+position = Vector2(32, 0)
+texture = ExtResource("4_gwnis")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Vision Area" unique_id=1915893888]
-position = Vector2(171, 2.84124e-07)
-rotation = 1.5707964
-shape = SubResource("RectangleShape2D_i4sqk")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Vision Area" unique_id=324058949]
+polygon = PackedVector2Array(8, -2, 36, -16, 54, -24, 56, -22, 56, 22, 54, 24, 36, 16, 8, 2)
 
 [node name="Player Collision" type="Area2D" parent="." unique_id=1002591778]
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player Collision" unique_id=289417342]
-position = Vector2(-0.5, -0.5)
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_ukv2n")
 
 [connection signal="body_entered" from="Vision Area" to="." method="_on_vision_area_body_entered"]
