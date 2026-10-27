@@ -22,7 +22,8 @@ texture = ExtResource("2_hirsf")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=424747417]
 shape = SubResource("CapsuleShape2D_k3v36")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=82532619]
+[node name="Area2D" type="Area2D" parent="." unique_id=82532619 groups=["NPC"]]
+collision_layer = 2
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=881931731]
 shape = SubResource("RectangleShape2D_ukv2n")
