@@ -18,12 +18,12 @@ config/icon="res://icon.svg"
 [autoload]
 
 Globals="*uid://cyig3d7vt8dwr"
+TransitionScene="*uid://b2c4e56gxx47k"
 
 [display]
 
 window/size/viewport_width=320
 window/size/viewport_height=180
-window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/vsync/vsync_mode=0

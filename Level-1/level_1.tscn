@@ -10,6 +10,7 @@ script = ExtResource("2_i5dkh")
 restricted_amount = 2
 
 [node name="Tilemaps" type="Node2D" parent="." index="0" unique_id=1698739728]
+unique_name_in_owner = true
 
 [node name="Roads" type="TileMapLayer" parent="Tilemaps" index="0" unique_id=943914879]
 texture_filter = 1

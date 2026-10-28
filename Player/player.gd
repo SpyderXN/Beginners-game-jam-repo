@@ -26,11 +26,13 @@ func update_eyes() -> void:
 	if eye:
 		vision_area.visible = false
 		vision_area.set_deferred("monitorable", false)
+		vision_area.set_deferred("monitoring", false)
 		eyes_closed.emit()
 		print("Eyes closed")
 	else:
 		vision_area.visible = true
 		vision_area.set_deferred("monitorable", true)
+		vision_area.set_deferred("monitoring", true)
 		eyes_opened.emit()
 		print("Eyes opened")
 

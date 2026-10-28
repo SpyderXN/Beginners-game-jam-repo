@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://bk60p2lry8oe"]
+
+[ext_resource type="Script" uid="uid://b7idjfygtcqdi" path="res://Menu/menu.gd" id="1_ihied"]
+[ext_resource type="StyleBox" uid="uid://cr3mtcle1x04b" path="res://Style Box/new_style_box_flat.tres" id="1_rwxi6"]
+[ext_resource type="StyleBox" uid="uid://carqq8xo5didi" path="res://Style Box/hover.tres" id="3_raj00"]
+
+[node name="Menu" type="CanvasLayer" unique_id=716037086]
+script = ExtResource("1_ihied")
+
+[node name="Label" type="Label" parent="." unique_id=1161382499]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -59.5
+offset_right = 20.0
+offset_bottom = -36.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Where are my Shades ?"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1024269930]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.0
+offset_top = -41.0
+offset_right = 53.0
+offset_bottom = 73.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Play" type="Button" parent="VBoxContainer" unique_id=1803586628]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_rwxi6")
+theme_override_styles/hover = ExtResource("3_raj00")
+text = "Play"
+icon_alignment = 1
+
+[node name="Exit" type="Button" parent="VBoxContainer" unique_id=1735632613]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_rwxi6")
+theme_override_styles/hover = ExtResource("3_raj00")
+text = "Exit
+"
+icon_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
