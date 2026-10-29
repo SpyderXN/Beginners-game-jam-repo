@@ -3,6 +3,7 @@ extends CharacterBody2D
 #Signals
 signal eyes_closed
 signal eyes_opened
+signal eye_sprite(is_open: bool)
 
 #Eyes Variable
 @export var eye: bool
@@ -34,6 +35,7 @@ func update_eyes() -> void:
 		vision_area.set_deferred("monitorable", true)
 		vision_area.set_deferred("monitoring", true)
 		eyes_opened.emit()
+		eye_sprite.emit(true)
 		print("Eyes opened")
 
 #Player movement script

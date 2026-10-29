@@ -4,18 +4,23 @@
 [ext_resource type="PackedScene" uid="uid://cd1dewl5ly5lq" path="res://Player/player.tscn" id="1_yh5la"]
 [ext_resource type="Script" uid="uid://s6cj8d0ef2v7" path="res://Main/camera_2d.gd" id="3_k3v36"]
 [ext_resource type="PackedScene" uid="uid://de5he7uc687fq" path="res://HUD/hud.tscn" id="3_qvhan"]
+[ext_resource type="PackedScene" uid="uid://dyfb35ex84s6c" path="res://Goal/goal.tscn" id="5_k3v36"]
 
 [node name="Main" type="Node2D" unique_id=401837326]
 script = ExtResource("1_eunhr")
 
 [node name="Player" parent="." unique_id=435235803 instance=ExtResource("1_yh5la")]
 position = Vector2(104, 98)
-max_speed = 100
-acceleration = 100
-friction = 8
+max_speed = 30
+acceleration = 20
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1085140546]
 zoom = Vector2(2, 2)
+limit_left = -14
+limit_top = -75
+limit_right = 384
+limit_bottom = 205
+limit_smoothed = true
 position_smoothing_enabled = true
 script = ExtResource("3_k3v36")
 zoom_in = 4.0
@@ -25,6 +30,11 @@ zoom_out = 2.0
 
 [node name="HUD" parent="UI" unique_id=1545173530 instance=ExtResource("3_qvhan")]
 
+[node name="Goal" parent="." unique_id=2096629941 instance=ExtResource("5_k3v36")]
+position = Vector2(158, 93)
+next_level = ""
+
 [connection signal="amount_crossed" from="." to="UI/HUD" method="_on_main_amount_crossed"]
+[connection signal="eye_sprite" from="Player" to="UI/HUD" method="_on_player_eye_sprite"]
 [connection signal="eyes_closed" from="Player" to="Player/Camera2D" method="_on_player_eyes_closed"]
 [connection signal="eyes_opened" from="Player" to="Player/Camera2D" method="_on_player_eyes_opened"]

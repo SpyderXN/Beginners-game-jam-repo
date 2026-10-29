@@ -3,6 +3,11 @@ extends Control
 @onready var amount: Label = $HBoxContainer/Amount
 @onready var max_amount: Label = $HBoxContainer/MaxAmount
 @onready var lose_panel: PanelContainer = $"Lose Panel"
+@onready var eye_close: Sprite2D = $HBoxContainer/EyeClose
+@onready var eye_open: Sprite2D = $HBoxContainer/EyeOpen
+
+var open_tex: String
+var close_tex: String
 
 func _process(_delta: float) -> void:
 	update_amount()
@@ -21,4 +26,12 @@ func _on_retry_pressed() -> void:
 	TransitionScene.change_scene_to("res://Level-1/level_1.tscn")
 
 func _on_menu_pressed() -> void:
-	pass # Replace with function body.
+	TransitionScene.change_scene_to("res://Menu/menu.tscn")
+
+
+#func _on_player_eye_sprite(is_open: bool) -> void:
+	#if is_open:
+		#eye_open.texture = open_tex
+	#else:
+		#eye_open.visible = false
+		#eye_close.visible = true

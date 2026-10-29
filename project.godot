@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Petrified"
-run/main_scene="uid://b3151klmju1o0"
+run/main_scene="uid://bk60p2lry8oe"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -24,6 +24,7 @@ TransitionScene="*uid://b2c4e56gxx47k"
 
 window/size/viewport_width=320
 window/size/viewport_height=180
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/vsync/vsync_mode=0

@@ -4,8 +4,28 @@
 [ext_resource type="StyleBox" uid="uid://cr3mtcle1x04b" path="res://Style Box/new_style_box_flat.tres" id="1_rwxi6"]
 [ext_resource type="StyleBox" uid="uid://carqq8xo5didi" path="res://Style Box/hover.tres" id="3_raj00"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w6voe"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_eafcm"]
+font_size = 32
+font_color = Color(0.1764706, 0.34117648, 0.2901961, 1)
+outline_size = 5
+outline_color = Color(0.49019608, 0.7921569, 0.49019608, 1)
+shadow_size = 10
+shadow_color = Color(0.019607844, 0.019607844, 0.019607844, 0.23529412)
+shadow_offset = Vector2(2, 5)
+
 [node name="Menu" type="CanvasLayer" unique_id=716037086]
 script = ExtResource("1_ihied")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2067508825]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.6156863, 0.40784314, 0.3019608, 1)
 
 [node name="Label" type="Label" parent="." unique_id=1161382499]
 anchors_preset = 8
@@ -13,13 +33,19 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -59.5
-offset_right = 20.0
-offset_bottom = -36.5
+offset_left = -109.0
+offset_top = -89.0
+offset_right = 115.0
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Where are my Shades ?"
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_w6voe")
+text = "Where are my 
+Shades ?"
+label_settings = SubResource("LabelSettings_eafcm")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1024269930]
 anchors_preset = 8
@@ -27,10 +53,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -53.0
-offset_top = -41.0
-offset_right = 53.0
-offset_bottom = 73.0
+offset_left = -54.0
+offset_top = -17.0
+offset_right = 52.0
+offset_bottom = 97.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 15

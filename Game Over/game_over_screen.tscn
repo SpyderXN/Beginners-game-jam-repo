@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://cgvm6cepgxlvr"]
+
+[ext_resource type="StyleBox" uid="uid://cr3mtcle1x04b" path="res://Style Box/new_style_box_flat.tres" id="1_aadp3"]
+[ext_resource type="Script" uid="uid://i7sjvotbvtn3" path="res://Game Over/game_over_screen.gd" id="1_pawfo"]
+[ext_resource type="StyleBox" uid="uid://carqq8xo5didi" path="res://Style Box/hover.tres" id="2_pawfo"]
+
+[node name="GameOverScreen" type="CanvasLayer" unique_id=1802137679]
+script = ExtResource("1_pawfo")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=742016445]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.7764706, 0.35686275, 0.43137255, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1090427846]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -64.0
+offset_right = 52.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Thank you for Playing"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2103739978]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -16.0
+offset_right = 51.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Home" type="Button" parent="VBoxContainer" unique_id=934292819]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_aadp3")
+theme_override_styles/hover = ExtResource("2_pawfo")
+text = "Menu"
+
+[connection signal="pressed" from="VBoxContainer/Home" to="." method="_on_home_pressed"]

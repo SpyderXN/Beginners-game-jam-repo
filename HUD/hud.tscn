@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://de5he7uc687fq"]
 
 [ext_resource type="Script" uid="uid://itlx3cltkoxi" path="res://HUD/hud.gd" id="1_h61sl"]
+[ext_resource type="Texture2D" uid="uid://h2tjxs120mvk" path="res://Assets/tile_0052.png" id="2_1rsjr"]
 [ext_resource type="StyleBox" uid="uid://cr3mtcle1x04b" path="res://Style Box/new_style_box_flat.tres" id="2_yu8mg"]
 [ext_resource type="StyleBox" uid="uid://carqq8xo5didi" path="res://Style Box/hover.tres" id="3_jvmdh"]
+[ext_resource type="Texture2D" uid="uid://dpb87oo8yuw3g" path="res://Assets/tile_0033.png" id="3_tnm0g"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jvmdh"]
 content_margin_left = 15.0
@@ -63,6 +65,16 @@ theme_override_font_sizes/font_size = 8
 text = "MaxAmount"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="EyeClose" type="Sprite2D" parent="HBoxContainer" unique_id=1731721330]
+texture_filter = 1
+position = Vector2(294, 13)
+texture = ExtResource("2_1rsjr")
+
+[node name="EyeOpen" type="Sprite2D" parent="HBoxContainer" unique_id=2131908166]
+texture_filter = 1
+position = Vector2(294, 13)
+texture = ExtResource("3_tnm0g")
 
 [node name="Win Panel" type="PanelContainer" parent="." unique_id=1887653212]
 visible = false
